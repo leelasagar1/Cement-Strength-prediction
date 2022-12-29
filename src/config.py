@@ -1,0 +1,6 @@
+train_data_path = "../Data/Training_Batch_Files/"
+pred_data_path = "../Data/Prediction_Batch_Files/"
+train_schema_file = "../Data/schema_training.json"
+pred_schema_file = "../Data/schema_prediction.json"
+model_save_location = "../models"
+output_data_path = "../Data/Output"
