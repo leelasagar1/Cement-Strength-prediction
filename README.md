@@ -8,6 +8,15 @@ The model is trained on a dataset of cement strength measurements, along with th
 
 To use this model clone the repository to your local machine and use following commands
 
+#### Direct
+
 `pip install -r requirements`
 
 `python src/run.py --action train or predict`
+
+#### Docker
+
+`docker build -t cement-strength-prediction`
+
+`docker run -dp 3000:3000 cement-strength-prediction`
+
