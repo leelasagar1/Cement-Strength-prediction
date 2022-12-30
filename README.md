@@ -8,5 +8,6 @@ The model is trained on a dataset of cement strength measurements, along with th
 
 To use this model clone the repository to your local machine and use following commands
 
-**pip install -r requirements**
-**python src/run.py --action train or predict**
+`pip install -r requirements`
+
+`python src/run.py --action train or predict`
