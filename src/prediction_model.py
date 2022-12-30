@@ -46,7 +46,7 @@ class Prediction:
 
             predictions = model.predict(cluster_data.drop("cluster", axis=1))
 
-            cluster_data["predictions"] = predictions
+            cluster_data.loc[:,"predictions"] = predictions
         result = pd.concat([result, cluster_data["predictions"]])
         print("------>Prediction Done")
         data["prediction"] = result
