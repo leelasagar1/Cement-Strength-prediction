@@ -1,0 +1,10 @@
+name: cement-strenght-prediction
+on: [push]
+jobs:
+  run-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: train model
+      - run : pip3 install -r requiremt.txt
+      - run : python run.py
