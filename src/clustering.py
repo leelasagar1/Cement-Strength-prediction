@@ -23,7 +23,8 @@ class KMean_Clustering:
             kmeans.fit(data)
             wcss.append(kmeans.inertia_)
 
-        kn = KneeLocator(range(1, 11), wcss, curve="convex", direction="decreasing")
+        kn = KneeLocator(range(1, 11), wcss, curve="convex",
+                         direction="decreasing")
         return kn.elbow
 
     def create_clusters(self, data, number_of_clusters):

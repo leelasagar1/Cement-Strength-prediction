@@ -10,7 +10,8 @@ class Train_model:
     def train(self):
 
         # get data
-        data_getter = Data_Getter(config.train_data_path, config.train_schema_file)
+        data_getter = Data_Getter(
+            config.train_data_path, config.train_schema_file)
         data = data_getter.get_data()
 
         # preprocess data
@@ -25,7 +26,8 @@ class Train_model:
         # find clusters in data
         kmeans_cluster = KMean_Clustering()
         num_of_clusters = kmeans_cluster.find_number_of_clusters(data)
-        X = kmeans_cluster.create_clusters(X, number_of_clusters=num_of_clusters)
+        X = kmeans_cluster.create_clusters(
+            X, number_of_clusters=num_of_clusters)
         X["label"] = y
         print("------->Clustering Done")
         # find best models for each cluster

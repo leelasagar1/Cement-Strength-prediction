@@ -6,4 +6,3 @@ train_schema_file = os.path.abspath("Data/schema_training.json")
 pred_schema_file = os.path.abspath("Data/schema_prediction.json")
 model_save_location = os.path.abspath("models")
 output_data_path = os.path.abspath("Data/Output")
-

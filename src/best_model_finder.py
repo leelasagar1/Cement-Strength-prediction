@@ -22,9 +22,11 @@ class Model_Finder:
 
     # Train Linear Regression
     def build_Linear_Regression_model(self, X_train, y_train):
-        param_grid_linearReg = {"fit_intercept": [True, False], "copy_X": [True, False]}
+        param_grid_linearReg = {"fit_intercept": [
+            True, False], "copy_X": [True, False]}
         linear_reg_model = LinearRegression()
-        grid = GridSearchCV(linear_reg_model, param_grid_linearReg, verbose=3, cv=5)
+        grid = GridSearchCV(
+            linear_reg_model, param_grid_linearReg, verbose=3, cv=5)
         grid.fit(X_train, y_train)
         fit_intercept = grid.best_params_["fit_intercept"]
         # normalize = grid.best_params_['normalize']
@@ -43,7 +45,8 @@ class Model_Finder:
             "bootstrap": [True, False],
         }
         rf_reg = RandomForestRegressor()
-        grid = GridSearchCV(rf_reg, param_grid_Random_forest_Tree, verbose=3, cv=5)
+        grid = GridSearchCV(
+            rf_reg, param_grid_Random_forest_Tree, verbose=3, cv=5)
         grid.fit(X_train, y_train)
         n_estimators = grid.best_params_["n_estimators"]
         max_features = grid.best_params_["max_features"]
@@ -134,4 +137,5 @@ class Model_Finder:
     def save_model(self, model_name, model, cluster):
 
         model_name = f"{model_name}_{cluster}.pkl"
-        joblib.dump(model, os.path.join(config.model_save_location, model_name))
+        joblib.dump(model, os.path.join(
+            config.model_save_location, model_name))

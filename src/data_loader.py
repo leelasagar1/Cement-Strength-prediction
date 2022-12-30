@@ -22,7 +22,8 @@ class Data_Getter:
         schema = self.read_schema_file(self.schema_file_path)
         columns = list(schema["ColName"].keys())
         data = [
-            pd.read_csv(os.path.join(self.data_path, file), names=columns, skiprows=1)
+            pd.read_csv(os.path.join(self.data_path, file),
+                        names=columns, skiprows=1)
             for file in os.listdir(self.data_path)
         ]
         data = pd.concat(data)

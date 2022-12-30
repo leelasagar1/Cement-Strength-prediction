@@ -28,7 +28,8 @@ class Preprocessor:
     # replace missing values with nearest values mean
     def impute_missing_values(self, data):
 
-        imputer = KNNImputer(n_neighbors=3, weights="uniform", missing_values=np.nan)
+        imputer = KNNImputer(
+            n_neighbors=3, weights="uniform", missing_values=np.nan)
         array = imputer.fit_transform(data)
         data = pd.DataFrame(data=array, columns=data.columns)
         return data
