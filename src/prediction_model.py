@@ -26,12 +26,15 @@ class Prediction:
         if null_present:
 
             df = preprocess.impute_missing_values(data)
-
+        
         df = preprocess.log_transformation(df)
         df_scaled = pd.DataFrame(preprocess.standard_scale_data(df), columns=df.columns)
 
+        #predict clusters
         k_means_model = joblib.load(f"{config.model_save_location}/Kmeans_cluster.pkl")
         df_scaled["cluster"] = k_means_model.predict(df_scaled)
+
+        #predict values for each cluster data
         result = pd.DataFrame()
         for cluster in df_scaled["cluster"].unique():
 
