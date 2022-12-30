@@ -6,5 +6,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run : pip3 install -r requirement.txt
-      - run : python src/run.py
+      - run : python src/run.py --action predict
       - run: ls -a
