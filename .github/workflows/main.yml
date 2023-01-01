@@ -1,3 +1,5 @@
+#automate the training or prediction in docker whenever pushed to github
+
 name: cement-strenght-prediction
 on: [push]
 jobs:
