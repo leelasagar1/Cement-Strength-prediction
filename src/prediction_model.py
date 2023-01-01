@@ -39,6 +39,7 @@ class Prediction:
 
         # predict values for each cluster data
         result = pd.DataFrame()
+
         for cluster in df_scaled["cluster"].unique():
 
             cluster_data = df_scaled[df_scaled["cluster"] == cluster]
@@ -48,9 +49,11 @@ class Prediction:
             model = joblib.load(f"{config.model_save_location}/{model_name}")
 
             predictions = model.predict(cluster_data.drop("cluster", axis=1))
-
-            cluster_data.loc[:, "predictions"] = predictions
-        result = pd.concat([result, cluster_data["predictions"]])
+            cluster_data["predictions"] = predictions
+            result = pd.concat([result, cluster_data["predictions"]])
+            
+        
+        result = result.sort_index()
         print("------>Prediction Done")
         data["prediction"] = result
         data.to_csv(f"{config.output_data_path}/result.csv", index=False)

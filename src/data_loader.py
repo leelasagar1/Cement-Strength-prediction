@@ -26,5 +26,5 @@ class Data_Getter:
                         names=columns, skiprows=1)
             for file in glob.glob(self.data_path+'/*.csv')
         ]
-        data = pd.concat(data)
+        data = pd.concat(data,ignore_index=True)
         return data
