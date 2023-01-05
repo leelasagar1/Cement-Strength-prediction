@@ -1,6 +1,6 @@
 import json
 import pandas as pd
-import os
+import glob
 
 
 class Data_Getter:
@@ -22,9 +22,10 @@ class Data_Getter:
         schema = self.read_schema_file(self.schema_file_path)
         columns = list(schema["ColName"].keys())
         data = [
-            pd.read_csv(os.path.join(self.data_path, file),
+            pd.read_csv(file,
                         names=columns, skiprows=1)
-            for file in os.listdir(self.data_path)
+            for file in glob.glob(self.data_path+'/*.csv')
         ]
         data = pd.concat(data,ignore_index=True)
         return data
+
