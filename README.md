@@ -2,7 +2,7 @@
 
 ## Description
 
-This project aims to build a regression model to predict the concrete compressive strength based on the different features in the training data. The model uses the data to learn the relationship between the input features and the cement strength, and is then able to make predictions on new, unseen data.
+This project aims to build a regression model to predict the concrete compressive strength based on the different features. The model uses the data to learn the relationship between the input features and the cement strength, and is then able to make predictions on new, unseen data.
 
 ## Installation
 
