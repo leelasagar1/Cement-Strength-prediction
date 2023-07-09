@@ -20,11 +20,11 @@ pip install -r requirements.txt
 ```
 
 5. Run the script using the following command:
-   ##### CMD
+##### CMD
  ```shell
  python src/run.py --action train or predict
  ```
-   ##### Docker
+##### Docker
 ```shell
 docker build -t cement-strength-prediction .
 
