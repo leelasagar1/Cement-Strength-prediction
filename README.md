@@ -19,7 +19,7 @@ To use the Cement Strength Prediction project, follow these steps:
 pip install -r requirements.txt
 ```
 
-5. Run the script using the following command:
+5. Run the script either using CMD or Docker:
 ##### CMD
  ```shell
  python src/run.py --action train or predict
